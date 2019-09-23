@@ -1,13 +1,14 @@
 package com.acharya.FIFA;
 
-import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App 
 {
     public static void main( String[] args )
     {		
-    	BeanFactory factory = new BeanFactory("Spring.xml");
-    	GOATS obj = (GOATS) factory.getBean("Something");
+    	ApplicationContext context = new ClassPathXmlApplicationContext("Spring.xml");
+    	GOATS obj = (GOATS) context.getBean("Something");
         obj.golazzo();
     }
 }
